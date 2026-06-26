@@ -1,9 +1,9 @@
-import * as pg from "pg";
+import * as pg from 'pg';
 const { Pool } = pg.default;
 
 const pool = new Pool({
-	connectionString:
-		"postgresql://<username>:<password>@<hostname>:5432/<database_name>",
+  connectionString:
+    'postgresql://postgres:postgrespassword@localhost:5432/postgres_database',
 });
 
 export { pool };
