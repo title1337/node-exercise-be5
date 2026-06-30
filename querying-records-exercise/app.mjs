@@ -5,7 +5,7 @@ const app = express();
 const port = 4000;
 
 app.use(express.json());
-
+// 📍 **** สร้าง API เพื่อใช้ในการดูข้อมูลหนังแต่ละเรื่องด้วย movieId ตรงนี้ ****
 app.get('/movie', async (req, res) => {
   try {
     const result = await pool.query('select * from movies');
@@ -35,8 +35,6 @@ app.get('/movie/:movieID', async (req, res) => {
     });
   }
 });
-
-// 📍 **** สร้าง API เพื่อใช้ในการดูข้อมูลหนังแต่ละเรื่องด้วย movieId ตรงนี้ ****
 
 app.listen(port, () => {
   console.log(`🚀 Server is running at ${port}`);
